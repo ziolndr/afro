@@ -1,0 +1,16 @@
+{
+  "name": "afro-arbiter-field",
+  "version": "1.2.3",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build-field": "node scripts/build-field.mjs",
+    "rebuild": "node scripts/build-field.mjs --force",
+    "start": "node server.mjs",
+    "test": "node tests/unit.mjs",
+    "deploy": "zsh ./DEPLOY_AFRO.command"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

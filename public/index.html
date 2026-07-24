@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Search the complete Afro Magazine archive by meaning. African stories, people, culture and movement — ranked by ARBITER.">
+  <meta name="theme-color" content="#fbfaf7">
+  <title>AFRO — Search Africa by Meaning</title>
+  <link rel="icon" href="/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.v123.css?v=123">
+  <script>
+    (() => {
+      const saved = localStorage.getItem('afro-theme');
+      const theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.dataset.theme = theme;
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', theme === 'dark' ? '#090908' : '#fbfaf7');
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand-line" href="/">The African story. In context. By meaning.</a>
+    <nav class="top-navigation" id="primary-navigation" aria-label="Main sections">
+      <button type="button" data-category="" class="active">Stories</button>
+      <button type="button" data-category="Culture">Culture</button>
+      <button type="button" data-category="Business">Business</button>
+      <button type="button" data-category="Travel">Travel</button>
+      <button type="button" data-category="Entertainment">Entertainment</button>
+      <button class="header-search" id="search-jump" type="button" aria-label="Focus search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+        <span>Search</span>
+      </button>
+    </nav>
+    <div class="header-actions">
+      <a class="action-secondary" href="https://www.afromag.co.za/wp-login.php" target="_blank" rel="noreferrer">Sign in</a>
+      <a class="action-primary" href="https://www.afromag.co.za/register/" target="_blank" rel="noreferrer">Join the portal</a>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
+        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path></svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path></svg>
+      </button>
+      <button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="mobile-navigation" aria-label="Open section menu"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="mobile-navigation" id="mobile-navigation" aria-label="Mobile sections"></nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero-shell" aria-labelledby="hero-title">
+      <div class="hero-panel hero-portrait" aria-hidden="true"></div>
+      <div class="hero-paper" aria-hidden="true"></div>
+      <div class="hero-panel hero-city" aria-hidden="true"></div>
+      <div class="hero-panel hero-maker" aria-hidden="true"></div>
+      <div class="hero-panel hero-land" aria-hidden="true"></div>
+      <div class="hero-panel hero-regalia" aria-hidden="true"></div>
+      <div class="hero-fade" aria-hidden="true"></div>
+
+      <div class="hero-copy">
+        <h1 id="hero-title">Search Africa<br>by <em>meaning.</em></h1>
+        <p>Stories, people, culture, business and movement<br class="desktop-break"> across the continent — discover by resonance,<br class="desktop-break"> not by keywords.</p>
+      </div>
+
+      <form class="search-form" id="search-form" role="search">
+        <label class="visually-hidden" for="query">Search Afro Magazine by meaning</label>
+        <div class="search-control">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+          <textarea id="query" name="query" rows="1" placeholder="Explore stories, people, places and ideas across Africa…" autocomplete="off"></textarea>
+          <button type="submit" aria-label="Search the field"><span class="visually-hidden">Search</span><b aria-hidden="true">→</b></button>
+        </div>
+        <div class="examples" aria-label="Example searches">
+          <span>Try searching</span>
+          <button type="button" data-query="African storytelling reaching global screens">African storytelling reaching global screens</button>
+          <button type="button" data-query="Women shaping the creative economy across Africa">Women shaping the creative economy</button>
+          <button type="button" data-query="Tourism, culture and new connections across Southern Africa">Tourism and culture across Southern Africa</button>
+          <button type="button" data-query="Zambian voices reaching the world">Zambian voices to the world</button>
+        </div>
+      </form>
+
+      <div class="engine-signature"><span class="engine-mark">△</span> Powered by ARBITER</div>
+    </section>
+
+    <section class="news-wire" aria-label="Latest headlines">
+      <div class="wire-label"><span aria-hidden="true">ϟ</span> Flash news</div>
+      <div class="wire-items" id="wire-items"><span>Loading the latest stories…</span></div>
+      <button class="wire-link" id="view-latest" type="button">View all news <span>›</span></button>
+    </section>
+
+    <section class="trending-section" aria-labelledby="trending-title">
+      <header class="section-intro">
+        <h2 id="trending-title">Trending across<br>the continent</h2>
+        <i aria-hidden="true"></i>
+        <p>The stories resonating most right now —<br>curated by meaning, not algorithms.</p>
+        <button class="outline-button" id="explore-all" type="button">Explore all stories</button>
+      </header>
+      <div class="trending-content">
+        <nav class="trending-filters" id="trending-filters" aria-label="Trending sections"></nav>
+        <div class="trending-grid" id="trending-grid"></div>
+      </div>
+    </section>
+
+    <section class="discovery-band" aria-label="How discovery works">
+      <div class="discovery-statement">
+        <span class="resonance-glyph" aria-hidden="true"><i></i><i></i><i></i></span>
+        <p>Curated by <em>meaning.</em><br>Ranked by <em>resonance.</em></p>
+      </div>
+      <div class="discovery-copy">
+        <p>Our discovery engine understands context,<br>connections and culture to surface the most<br>relevant stories across Africa.</p>
+        <button id="learn-more" type="button">Learn how it works <span>→</span></button>
+      </div>
+      <dl class="field-facts">
+        <div><span aria-hidden="true">▤</span><dt id="story-count">—</dt><dd>Stories indexed</dd></div>
+        <div><span aria-hidden="true">♙</span><dt id="category-count">—</dt><dd>Sections represented</dd></div>
+        <div><span aria-hidden="true">◎</span><dt id="country-count">—</dt><dd>Countries covered</dd></div>
+      </dl>
+    </section>
+
+    <section class="field-output" aria-live="polite">
+      <div class="output-header">
+        <div>
+          <p class="eyebrow" id="section-label">The complete archive</p>
+          <h2 id="output-title">Latest stories</h2>
+        </div>
+        <div class="output-actions">
+          <button class="back-home" id="back-home" type="button">← Back to AFRO</button>
+          <div class="measurement" id="measurement"></div>
+        </div>
+      </div>
+      <div class="story-grid" id="story-grid"></div>
+      <div class="empty-state" id="empty-state" hidden></div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="footer-wordmark" href="/">AFRO <span>MAGAZINE</span></a>
+    <p>Search the African story by meaning.</p>
+    <div><span id="field-state">Connecting to the field</span><a href="https://www.afromag.co.za/" target="_blank" rel="noreferrer">Original publication ↗</a></div>
+  </footer>
+
+  <script type="module" src="/app.v123.js?v=123"></script>
+</body>
+</html>
