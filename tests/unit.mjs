@@ -58,7 +58,7 @@ const server = http.createServer((request, response) => {
       modified: "2026-07-24T10:00:00",
       title: { rendered: isPost ? "A story" : "About" },
       excerpt: { rendered: "Public content" },
-      content: { rendered: "<p>Public African content.</p>" },
+      content: { rendered: "<p>Public African content about creators, culture, enterprise, leadership, and regional change across the continent.</p>" },
       _embedded: {}
     }]));
     return;
@@ -76,7 +76,9 @@ await once(server, "listening");
 try {
   const address = server.address();
   const result = await collectAfroContent({ sourceUrl: `http://127.0.0.1:${address.port}` });
-  assert.equal(result.records.length, 2);
+  assert.equal(result.records.length, 1);
+  assert.equal(result.records[0].type, "story");
+  assert.equal(result.records[0].title, "A story");
   assert.equal(result.failures.length, 1);
   assert.equal(result.failures[0].status, 404);
   assert.equal(result.failures[0].restNamespace, "vendor/v1");
