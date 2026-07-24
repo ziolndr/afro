@@ -612,3 +612,6 @@ body.results-active .story-grid { grid-template-columns: repeat(4, minmax(0, 1fr
   body.results-active .output-actions { align-items: flex-start; }
   body.results-active .story-grid { grid-template-columns: 1fr; }
 }
+
+/* Keep the compact results masthead on two explicit lines. */
+.hero-title-line { display: block; }
