@@ -16,6 +16,10 @@
       document.querySelector('meta[name="theme-color"]').setAttribute('content', theme === 'dark' ? '#090908' : '#fbfaf7');
     })();
   </script>
+
+  <style id="afro-hero-title-fix">
+    #hero-title .hero-title-break { display: block !important; }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -56,7 +60,7 @@
       <div class="hero-fade" aria-hidden="true"></div>
 
       <div class="hero-copy">
-        <h1 id="hero-title"><span class="hero-title-line">Search Africa</span><span class="hero-title-line">by <em>meaning.</em></span></h1>
+        <h1 id="hero-title">Search Africa<br class="hero-title-break">by <em>meaning.</em></h1>
         <p>Stories, people, culture, business and movement<br class="desktop-break"> across the continent — discover by resonance,<br class="desktop-break"> not by keywords.</p>
       </div>
 
