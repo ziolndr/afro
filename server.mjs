@@ -10,7 +10,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const publicDir = path.join(__dirname, "public");
 const fieldDir = path.resolve(process.env.AFRO_FIELD_DIR || path.join(__dirname, "data"));
 const port = Number(process.env.PORT || process.env.AFRO_PORT || 8796);
-const host = process.env.HOST || "127.0.0.1";
+const host =
+  process.env.HOST ||
+  (process.env.RENDER === "true" ? "0.0.0.0" : "127.0.0.1");
 
 const mime = {
   ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8",
